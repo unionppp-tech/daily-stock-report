@@ -23,19 +23,20 @@ def analyze_ticker(ticker):
     df_200 = df.tail(200)
 
     max_close = df_200['Close'].max()
+
     last_close = df_200['Close'].iloc[-1]
-    prev_close = df_200['Close'].iloc[-2]
+    last_date = df_200.index[-1].strftime("%Y-%m-%d")
 
     drop_rate = (last_close - max_close) / max_close * 100
 
     return (
         f"{ticker}(최고가: {max_close:.2f}$, "
-        f"전일종가: {prev_close:.2f}$, "
+        f"최근종가({last_date}): {last_close:.2f}$, "
         f"최고가대비 하락: {drop_rate:.2f}%)"
     )
 
 def main():
-    send_message("📊 200거래일 기준 하락률 리포트")
+    send_message("📊 200거래일 기준 최고가 대비 하락률 리포트")
 
     for ticker in TICKERS:
         try:
