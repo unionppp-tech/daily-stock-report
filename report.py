@@ -32,6 +32,7 @@ def analyze_ticker(ticker):
     std_60 = df_60['Close'].std()
     ma_60 = df['Close'].tail(60).mean()
     target_std_60 = ma_60 - std_60*2
+    rate_target_std_60 = last_close/target_std_6
 
     return (
         f"{ticker}(최고가: {max_close:.2f}$, "
@@ -40,6 +41,7 @@ def analyze_ticker(ticker):
         f"60일 표준편차: {std_60:.2f}$"
         f"60일 평균: {ma_60:.2f}$ | "
         f"60일 타겟가: {target_std_60:.2f}$ | "
+        f"60일 타겟가: {rate_target_std_60:.2f}$ | "
     )
 
 def main():
