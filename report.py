@@ -21,6 +21,7 @@ def analyze_ticker(ticker):
         return f"{ticker} ❌ 데이터 부족"
 
     df_200 = df.tail(200)
+    df_60 = df.tail(60)
 
     max_close = df_200['Close'].max()
 
