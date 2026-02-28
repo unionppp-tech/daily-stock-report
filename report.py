@@ -30,12 +30,14 @@ def analyze_ticker(ticker):
 
     drop_rate = (last_close - max_close) / max_close * 100
     std_60 = df_60['Close'].std()
+    ma_60 = df['Close'].tail(60).mean()
 
     return (
         f"{ticker}(최고가: {max_close:.2f}$, "
         f"최근종가({last_date}): {last_close:.2f}$, "
         f"최고가대비 하락: {drop_rate:.2f}%)"
         f"60일 표준편차: {std_60:.2f}$"
+        f"60일 평균: {ma_60:.2f}$ | "
     )
 
 def main():
