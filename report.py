@@ -41,7 +41,7 @@ def analyze_ticker(ticker):
         f"60일 표준편차: {std_60:.2f}$"
         f"60일 평균: {ma_60:.2f}$ | "
         f"표준편차 타겟가: {target_std_60:.2f}$ | "
-        f"표준편차 비율(1미만 매수): {rate_target_std_60:.2f}$ | "
+        f"표준편차 비율(1미만 매수): {rate_target_std_60:.4f}"
     )
 
 def main():
