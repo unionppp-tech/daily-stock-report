@@ -5,7 +5,7 @@ import FinanceDataReader as fdr
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-TICKERS = ["TQQQ", "QQQ"]
+TICKERS = ["TQQQ", "QQQ","SOXX","SOXL","TSLA","NVDA"]
 
 def send_message(msg):
     now = datetime.datetime.now()
