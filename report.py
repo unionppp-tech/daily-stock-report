@@ -5,7 +5,7 @@ import FinanceDataReader as fdr
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-TICKERS = ["TQQQ", "QQQ","SOXX","SOXL","TSLA","NVDA"]
+TICKERS = ["TQQQ", "QLD","QQQ","SOXX","SOXL","TSLA","NVDA"]
 
 def send_message(msg):
     now = datetime.datetime.now()
@@ -13,6 +13,8 @@ def send_message(msg):
         "content": f"[{now.strftime('%Y-%m-%d %H:%M:%S')}] {msg}"
     }
     requests.post(DISCORD_WEBHOOK_URL, json=payload, timeout=10)
+    requests.post(DISCORD_WEBHOOK_URL2, json=payload, timeout=10)
+
 
 def analyze_ticker(ticker):
     df = fdr.DataReader(ticker)
