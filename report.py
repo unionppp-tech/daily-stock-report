@@ -4,6 +4,7 @@ import requests
 import FinanceDataReader as fdr
 
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
+DISCORD_WEBHOOK_URL2 = os.environ.get("DISCORD_WEBHOOK_URL2")
 
 TICKERS = ["TQQQ", "QLD","QQQ","SOXX","SOXL","TSLA","NVDA"]
 
